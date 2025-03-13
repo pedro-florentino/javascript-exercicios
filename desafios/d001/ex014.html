@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hora do dia</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1>Hora do dia</h1>
+            <div class="content">
+                <p id="hora"></p>
+                <img src="" alt="Foto do período do dia" id="imagem">
+            </div>
+        </div>
+    </main>
+    <script>
+        var hora = new Date()
+        var hora_atual = hora.getHours()
+        var p_hora = document.querySelector('p#hora')
+        p_hora.innerHTML += `Agora são ${hora_atual} horas.`
+        var corpo = document.querySelector('body')
+        var imagem = document.querySelector('img#imagem')
+
+        if (hora_atual > 0 && hora_atual <= 12) {
+            corpo.style.backgroundColor = "lightblue";
+            imagem.setAttribute("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTRGuD4oh4cZPMu9CY701nYxeUK-qBsq7wTw&s")
+        } else if (hora_atual >= 13 && hora_atual < 18) {
+            corpo.style.backgroundColor = "rgb(146, 95, 0";
+            imagem.setAttribute("src", "https://img.freepik.com/fotos-premium/fim-da-tarde-natureza-paisagem-foto-de-um-rio-ao-por-do-sol_566982-137.jpg")
+        } else {
+            corpo.style.backgroundColor = "rgb(63, 63, 63)";
+            imagem.setAttribute("src", "https://img.freepik.com/fotos-premium/linda-noite-no-oceano-com-lua-cheia_104785-866.jpg")
+        }
+    </script>
+</body>
+</html>
