@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Métodos de Array em JavaScript</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #f8f9fa;
+        color: #333;
+        padding: 20px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      section {
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      h1,
+      h2 {
+        color: #6c63ff;
+      }
+
+      code {
+        display: block;
+        background: #f4f4f4;
+        padding: 10px;
+        border-left: 4px solid #6c63ff;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Métodos de Array em JavaScript</h1>
+      <p>Aprenda a usar 10 métodos de array aplicados no código!</p>
+      <p>De uma olhada no console da página também.</p>
+    </header>
+    <main>
+      <section>
+        <h2>Data:</h2>
+        <p>Os dados da explicação.</p>
+        <code>
+          const data = [ <br />{ name: "Matheus", age: 31, sallary: 2000,
+          driverLicense: true },<br />
+          { name: "João", age: 18, sallary: 1500, driverLicense: false },<br />
+          { name: "Mariana", age: 22, sallary: 4000, driverLicense: true },<br />
+          { name: "Pedro", age: 50, sallary: 7200, driverLicense: true },<br />
+          { name: "Érica", age: 16, sallary: 0, driverLicense: false },<br />
+          ];
+        </code>
+      </section>
+      <section>
+        <h2>1. Reverse</h2>
+        <p>
+          O método <strong>reverse()</strong> inverte a ordem dos elementos do
+          array original.
+        </p>
+        <code>
+          const reverseData = data.reverse();<br />
+          console.log(reverseData);
+        </code>
+        <p>Resultado:</p>
+        <code>
+          [ <br />
+          { "name": "Érica", "age": 16, "sallary": 0, "driverLicense": false },
+          <br />
+          { "name": "Pedro", "age": 50, "sallary": 7200, "driverLicense": true
+          },
+          <br />
+          { "name": "Mariana", "age": 22, "sallary": 4000, "driverLicense":
+          true, },
+          <br />
+          { "name": "João", "age": 18, "sallary": 1500, "driverLicense": false
+          },
+          <br />
+          { "name": "Matheus", "age": 31, "sallary": 2000, "driverLicense": true
+          }
+          <br />
+          ]
+        </code>
+      </section>
+
+      <section>
+        <h2>2. Find</h2>
+        <p>
+          O método <strong>find()</strong> retorna o primeiro elemento que
+          atende a uma condição específica.
+        </p>
+        <code>
+          const highestSallary = data.find(user => user.sallary > 5000);<br />
+          console.log(highestSallary);
+        </code>
+        <p>Resultado:</p>
+        <code>
+          { "name": "Pedro", "age": 50, "sallary": 7200, "driverLicense": true }
+        </code>
+      </section>
+
+      <section>
+        <h2>3. FindIndex</h2>
+        <p>
+          O método <strong>findIndex()</strong> retorna o índice do primeiro
+          elemento que atende a uma condição.
+        </p>
+        <code>
+          const lowestSallary = data.findIndex(user => user.sallary > 0 &&
+          user.sallary < 2000);<br />
+          data[lowestSallary].sallary += 200;<br />
+          console.log(data);
+        </code>
+        <p>Resultado:</p>
+        <code>
+          3 <br />{ "name": "João", "age": 18, "sallary": 1700, "driverLicense":
+          false }
+        </code>
+      </section>
+
+      <section>
+        <h2>4. Includes</h2>
+        <p>
+          O método <strong>includes()</strong> verifica se um array contém um
+          elemento específico e retorna <em>true</em> ou <em>false</em>.
+        </p>
+        <code>
+          const numbers = [1, 2, 3, 4, 5];<br />
+          const hasFour = numbers.includes(4);<br />
+          console.log(hasFour);
+        </code>
+        <p>Resultado:</p>
+        <code> true </code>
+      </section>
+
+      <section>
+        <h2>5. Map</h2>
+        <p>
+          O método <strong>map()</strong> cria um novo array modificando cada
+          elemento do array original.
+        </p>
+        <code>
+          data.map(user => user.newsletter = false);<br />
+          console.log(data);
+        </code>
+        <p>Resultado:</p>
+        <code>
+          [ <br />{ "name": "Érica", "age": 16, "sallary": 0, "driverLicense":
+          false, "newsletter": true },<br />
+          { "name": "Pedro", "age": 50, "sallary": 7200, "driverLicense": true,
+          "newsletter": false },<br />
+          { "name": "Mariana", "age": 22, "sallary": 4000, "driverLicense":
+          true, "newsletter": false },<br />
+          { "name": "João", "age": 18, "sallary": 1700, "driverLicense": false,
+          "newsletter": false },<br />
+          { "name": "Matheus", "age": 31, "sallary": 2000, "driverLicense":
+          true, "newsletter": false }<br />
+          ]
+        </code>
+      </section>
+
+      <section>
+        <h2>6. Filter</h2>
+        <p>
+          O método <strong>filter()</strong> cria um novo array contendo apenas
+          os elementos que atendem a uma condição.
+        </p>
+        <code>
+          const drivers = data.filter(user => user.driverLicense);<br />
+          console.log(drivers);
+        </code>
+        <p>Resultado:</p>
+        <code>
+          [
+          <br />
+          { "name": "Pedro", "age": 50, "sallary": 7200, "driverLicense": true,
+          "newsletter": false },
+          <br />
+          { "name": "Mariana", "age": 22, "sallary": 4000, "driverLicense":
+          true, "newsletter": false },
+          <br />
+          { "name": "Matheus", "age": 31, "sallary": 2000, "driverLicense":
+          true, "newsletter": false }
+          <br />
+          ]
+        </code>
+      </section>
+
+      <section>
+        <h2>7. Reduce</h2>
+        <p>
+          O método <strong>reduce()</strong> reduz o array a um único valor,
+          aplicando uma função acumuladora.
+        </p>
+        <code>
+          const sallariesSum = data.reduce((totalSallary, user) => totalSallary
+          += user.sallary, 0);<br />
+          console.log(sallariesSum);
+        </code>
+        <p>Resultado:</p>
+        <code> 14900 </code>
+      </section>
+
+      <section>
+        <h2>8. ForEach</h2>
+        <p>
+          O método <strong>forEach()</strong> executa uma função para cada
+          elemento do array.
+        </p>
+        <code>
+          data.forEach(user => {<br />
+          console.log(`Olá ${user.name}!`);<br />
+          });
+        </code>
+        <p>Resultado:</p>
+        <code>
+          Olá Érica!
+          <br />
+          Olá Pedro!
+          <br />
+          Olá Mariana!
+          <br />
+          Olá João!
+          <br />
+          Olá Matheus!
+        </code>
+      </section>
+
+      <section>
+        <h2>9. Some</h2>
+        <p>
+          O método <strong>some()</strong> verifica se pelo menos um elemento do
+          array atende a uma condição.
+        </p>
+        <code>
+          let someoneWithNewsletter = data.some(user => user.newsletter);<br />
+          console.log(someoneWithNewsletter);
+        </code>
+        <p>Resultado:</p>
+        <code> 
+            true
+        </code>
+      </section>
+
+      <section>
+        <h2>10. Every</h2>
+        <p>
+          O método <strong>every()</strong> verifica se todos os elementos do
+          array atendem a uma condição.
+        </p>
+        <code>
+          const everyUserHasName = data.every(user => user.name);<br />
+          const everyUserHasGoodSallary = data.every(user => user.sallary >
+          2000);<br />
+          console.log(everyUserHasName);<br />
+          console.log(everyUserHasGoodSallary);
+        </code>
+        <p>Resultado:</p>
+        <code> 
+            true
+            <br>
+            false
+        </code>
+      </section>
+    </main>
+
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
