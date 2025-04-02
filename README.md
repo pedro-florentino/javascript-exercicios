@@ -1,2 +1,2 @@
 # javascript-exercicios
- Curso do Gustavo Guanabara sobre JavaScript
+ Curso do Gustavo Guanabara e Matheus Battisti - Hora de Codar sobre JavaScript
