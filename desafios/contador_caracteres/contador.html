@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style_geral.css">
+    <link rel="stylesheet" href="css/style_contador.css" />
+    <title>Contador de caracteres</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="contador.html">Início</a></li>
+          <li>
+            <a href="teste_velocidade.html">Teste de velocidade de digitação</a>
+          </li>
+        </ul>
+        <button id="alternarTema">Alternar tema</button>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h1>Contador de caracteres e palavras</h1>
+      <div class="field">
+        <label for="input">Digite seu texto:</label>
+        <textarea id="input" name="input" rows="5"></textarea>
+      </div>
+      <div class="counter">0 caractere(s)</div>
+      <button id="toggle">Contar palavras</button>
+    </div>
+
+    <script src="js/scripts_contador.js"></script>
+    <script src="js/scripts_alternar_tema.js"></script>
+  </body>
+</html>

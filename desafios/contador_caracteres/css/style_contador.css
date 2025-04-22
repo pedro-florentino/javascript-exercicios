@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+.counter {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+#toggle {
+  background-color: #4285f4;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#toggle:hover {
+  background-color: #0069d9;
+}

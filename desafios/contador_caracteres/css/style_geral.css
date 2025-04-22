@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+  height: 100vh;
+}
+
+header {
+  width: 100%;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-flow: row wrap;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+header a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#alternarTema {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#alternarTema:hover {
+  background-color: #0056b3;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  max-width: 700px;
+}
+
+.field {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  text-align: justify;
+  margin-bottom: 0.5rem;
+}
+
+textarea {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.claro {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.escuro {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.escuro #texto {
+  color: #333;
+}
+
+@media (max-width: 500px) {
+  #alternarTema {
+    position: static;
+    transform: none;
+    margin-left: 10px;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 630px) {
+  header nav {
+    justify-content: flex-start;
+  }
+}
