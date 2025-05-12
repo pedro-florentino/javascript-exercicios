@@ -1,11 +1,29 @@
 const express = require("express");
 const router = express.Router();
 const Job = require("../models/Job.js");
+const { where } = require("sequelize");
 
 // Test route to check if the job route is working
 // This route is used for testing purposes and can be removed later
 router.get("/test", (req, res) => {
   res.send("Job route is working!");
+});
+
+// Details of a specific job
+router.get("/view/:id", async (req, res) => {
+  const id = req.params.id;
+
+  // Find the job by ID
+  try {
+    const job = await Job.findByPk(id);
+    if (!job) {
+      return res.status(404).json({ error: "Job not found" });
+    }
+    res.render("view", { job });
+    console.log(id);
+  } catch (error) {
+    res.status(500).json({ error: "Internal server error" });
+  }
 });
 
 // Route rendering the add job form
