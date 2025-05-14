@@ -6,7 +6,6 @@
     Somos o site com mais vagas de tecnologia no mercado direcionadas ao home
     office
   </p>
-
   <form
     id="search-form"
     class="row g-2 align-items-center"
@@ -41,22 +40,45 @@
         {{#each jobs}}
           {{#if dataValues.new_job}}
             <li class="list-group-item new-job">
-              <img src="/img/company.svg" alt="Company" />
-              <p>{{dataValues.company}}</p>
-              <h2>{{dataValues.title}}</h2>
-              <p>R${{dataValues.salary}}</p>
-              <span class="new-job-label">Nova</span>
-              <a href="/jobs/view/{{dataValues.id}}" class="btn btn-primary">Ver
-                vaga</a>
+              <div class="content">
+                <img src="/img/company.svg" alt="Company" />
+
+                <div class="content-text">
+                  <p>{{dataValues.company}}</p>
+                  <h2>{{dataValues.title}}</h2>
+                  <p>
+                    R${{dataValues.salary}}
+                    <span class="new-job-label">Nova</span>
+                  </p>
+
+                </div>
+
+                <div class="content-right">
+                  <a
+                    href="/jobs/view/{{dataValues.id}}"
+                    class="btn btn-primary"
+                  >Ver vaga</a>
+                </div>
+              </div>
             </li>
           {{else}}
             <li class="list-group-item">
-              <img src="/img/company.svg" alt="Company" />
-              <p>{{dataValues.company}}</p>
-              <h2>{{dataValues.title}}</h2>
-              <p>R${{dataValues.salary}}</p>
-              <a href="/jobs/view/{{dataValues.id}}" class="btn btn-primary">Ver
-                vaga</a>
+              <div class="content">
+                <img src="/img/company.svg" alt="Company" />
+
+                <div class="content-text">
+                  <p>{{dataValues.company}}</p>
+                  <h2>{{dataValues.title}}</h2>
+                  <p>R${{dataValues.salary}}</p>
+                </div>
+
+                <div class="content-right">
+                  <a
+                    href="/jobs/view/{{dataValues.id}}"
+                    class="btn btn-primary"
+                  >Ver vaga</a>
+                </div>
+              </div>
             </li>
           {{/if}}
         {{/each}}
